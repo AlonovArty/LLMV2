@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLMV2", "LLMV2\LLMV2.csproj", "{97498128-AFB3-435F-835C-7BCF23646965}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GigaChatv2", "GigaChatv2\GigaChatv2.csproj", "{A684DF07-A5E1-48CD-AEC8-03E4E9D6CC97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{97498128-AFB3-435F-835C-7BCF23646965}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97498128-AFB3-435F-835C-7BCF23646965}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97498128-AFB3-435F-835C-7BCF23646965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A684DF07-A5E1-48CD-AEC8-03E4E9D6CC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A684DF07-A5E1-48CD-AEC8-03E4E9D6CC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A684DF07-A5E1-48CD-AEC8-03E4E9D6CC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A684DF07-A5E1-48CD-AEC8-03E4E9D6CC97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9231E0CC-D218-4A9A-B39C-7A8FB165E5FD}
 	EndGlobalSection
 EndGlobal
