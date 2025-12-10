@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using LLMV2.Classes;
 using LLMV2.Models.Responce;
-using MongoDB.Bson.IO;
+using Newtonsoft.Json;
 
 namespace LLMV2
 {
@@ -15,7 +14,8 @@ namespace LLMV2
         static string AuthorizationKey = "MDE5YjAzNDEtZTg5My03MWZlLTk4M2EtY2Y5OWRiMzAzMWYxOjYwNzRhYTdhLTcwOTctNDBmMy04ZjVkLTBkZDIwN2YxZGM3Yw==";
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string imagePath = @"C:\Users\student-A502.PERMAVIAT\Desktop\asd.png";
+            WallpaperSetter.SetWallpaper(imagePath);
         }
 
 
