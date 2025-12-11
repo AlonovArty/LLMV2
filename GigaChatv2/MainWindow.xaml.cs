@@ -36,17 +36,33 @@ namespace GigaChatv2
                 return;
             }
 
-            string text = PromptBox.Text.Trim();
-            ComboBoxItem style = StyleBox.SelectedItem as ComboBoxItem;
-            ComboBoxItem color = ColorBox.SelectedItem as ComboBoxItem;
-            ComboBoxItem aspect = AspectBox.SelectedItem as ComboBoxItem;
+            string prompt;
 
-            string prompt =
-                "Создай изображение по описанию: \"" + text + "\". " +
-                "Стиль: " + style.Content + ". " +
-                "Цветокоррекция: " + color.Content + ". " +
-                "Размер: " + aspect.Content + ". ";
-            
+            if (CalendarMode.IsChecked == true)
+            {
+                string holiday = Classes.HolidayCalendar.GetNearestHoliday();
+                ComboBoxItem style = StyleBox.SelectedItem as ComboBoxItem;
+                ComboBoxItem color = ColorBox.SelectedItem as ComboBoxItem;
+                ComboBoxItem aspect = AspectBox.SelectedItem as ComboBoxItem;
+                prompt =
+                    $"Создай праздничные обои для рабочего стола, посвящённые событию: \"{holiday}\". " +
+                    $"Используй стиль " + style.Content + ". " +
+                    "Размер: " + aspect.Content + ". ";
+            }
+            else
+            {
+                string text = PromptBox.Text.Trim();
+                ComboBoxItem style = StyleBox.SelectedItem as ComboBoxItem;
+                ComboBoxItem color = ColorBox.SelectedItem as ComboBoxItem;
+                ComboBoxItem aspect = AspectBox.SelectedItem as ComboBoxItem;
+
+                prompt =
+                    "Создай изображение по описанию: \"" + text + "\". " +
+                    "Стиль: " + style.Content + ". " +
+                    "Цветокоррекция: " + color.Content + ". " +
+                    "Размер: " + aspect.Content + ". ";
+            }
+
             GigaChatService.DialogHistory.Add(new Request.Message
             {
                 role = "user",
@@ -56,7 +72,6 @@ namespace GigaChatv2
             var answer = await GigaChatService.GetAnswer(Token, GigaChatService.DialogHistory);
 
             string content = answer.choices[0].message.content;
-            MessageBox.Show(content);
             string fileId = GigaChatService.ExtractImageId(content);
 
             byte[] img = await GigaChatService.DownloadImage(Token, fileId);

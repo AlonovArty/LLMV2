@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\HolidayCalendar.cs" />
     <Compile Include="Classes\WallpaperSetter.cs" />
     <Compile Include="Models\Response\ResponceMessage.cs" />
     <Compile Include="Models\Response\ResponseToken.cs" />
